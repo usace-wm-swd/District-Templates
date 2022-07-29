@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DISTRICT Home Page</title>
+        <meta name="Description" content="U.S. Army Corps of Engineers DISTRICT HERE Home Page" />
+        <link rel="stylesheet" href="/css/body.css" />
+        <link rel="stylesheet" href="/css/breadcrumbs.css" />
+        <link rel="stylesheet" href="/css/jumpMenu.css" />
+        <script type="text/javascript" src="/js/main.js"></script>
+        <!-- Grabs jquery from cloudflare's Content Delivery Network (CDN) - checks the hash to avoid MITM -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Alternatively install your own copy of jquery and call it from your web server -->
+        <!-- <script src="/js/jquery-3.5.1.min.js"></script> -->
+        <!-- Load your own script by uncommenting this and creating a main.js file - defer lets it load ASYNChronously with the page -->
+        <!-- <script defer src="/js/main.js?v=1"></script> -->
+    </head>
+    <body>
+        <div id="page-container">
+            <header id="header">
+            </header>
+            <div class="page-wrap">
+                <div class="container-fluid">
+                    <div id="breadcrumbs">
+                        <span>
+                            <a href="/" class="skin-breadcrumb"><span class="fa fa-home"></span></a>
+                            <!-- Additional breadcrumb entries
+							<span style="text-decoration: none"> / </span>
+							<span style="text-decoration: none">
+								<a href="somelink.html">Landing page</a>
+							</span>
+							<span style="text-decoration: none"> / </span>
+							<span style="text-decoration: none">
+								<span>Current page</span>
+							</span>
+						-->
+                        </span>
+                    </div>
+                    <div class="page-content">
+                        <sidebar id="sidebar">
+                        </sidebar>
+                        <div id="topPane" class="col-md backend-cp-collapsible">
+                            <!-- Page Content Here -->
+                            <div class="box-usace">
+                                <h2 class="box-header-striped">
+                                    <span class="titleLabel title">Content Title</span>
+                                    <span class="rss"></span>
+                                </h2>
+                                <div class="box-content" style="background-color:white;margin:auto">
+                                    <div class="content">
+                                        <!-- Box Content Here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="returnTop" title="Return to Top of Page">Top</button>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+        </footer>
+    </body>
+    <script>
+        // Load the templates client-side with javascript
+        $(document).ready(function () {
+                // Change v to a new number every time you update the template to help clear the cache for end users
+                $('#header').load('/EXAMPLE.header.html?v=1'); 
+                $('#sidebar').load('/EXAMPLE.sidebar.html?v=1'); 
+                $('#footer').load('/EXAMPLE.footer.html?v=1');
+            })
+    </script>
+
+</html>
