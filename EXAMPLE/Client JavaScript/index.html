@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DISTRICT Home Page</title>
+        <meta name="Description" content="U.S. Army Corps of Engineers DISTRICT HERE Home Page" />
+        <link rel="stylesheet" href="./css/body.css" />
+        <link rel="stylesheet" href="./css/breadcrumbs.css" />
+        <link rel="stylesheet" href="./css/jumpMenu.css" />
+        <script type="text/javascript" src="./js/main.js"></script>
+    </head>
+    <body>
+        <div id="page-container">
+            <header id="header">
+                <!--Header content populated here by JavaScript Tag at end of body -->
+            </header>
+            <div class="page-wrap">
+                <div class="container-fluid">
+                    <div id="breadcrumbs">
+                    </div>
+                    <div class="page-content">
+                        <sidebar id="sidebar">
+                            <!--Side bar content populated here by JavaScript Tag at end of body -->
+                        </sidebar>
+                        <div id="topPane" class="col-md backend-cp-collapsible">
+                            <!-- Page Content Here -->
+                            <div class="box-usace">
+                                <h2 class="box-header-striped">
+                                    <span class="titleLabel title">Content Title</span>
+                                    <span class="rss"></span>
+                                </h2>
+                                <div class="box-content" style="background-color:white;margin:auto">
+                                    <div class="content">
+                                        <!-- Box Content Here -->
+                                        <div>
+                                            <h1>Your Content Here!</h1>
+                                            <p>Place your page content in this field in the HTML. It will be neatly
+                                                contained within the header, sidebar, and footer templates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-usace">
+                                <h2 class="box-header-striped">
+                                    <span class="titleLabel title">Additional Content</span>
+                                    <span class="rss"></span>
+                                </h2>
+                                <div class="box-content" style="background-color:white;margin:auto">
+                                    <div class="content">
+                                        <!-- Box Content Here -->
+                                        <div>
+                                            <h1>More Paragraphs</h1>
+                                            <p>Styled like the district pages with the gray bar/red line on top and the
+                                                text offset.
+                                                Add as many of theses as you need!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1>Without the Box Headers!</h1>
+                                Or you can include content without the box-header-striped or box-content fields!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="returnTop" title="Return to Top of Page">Top</button>
+            </div>
+        </div>
+        <footer id="footer">
+            <!--Footer content populated here by script tag at end of body -->
+        </footer>
+        <script src="./js/libraries/jQuery-3.3.6.min.js"></script>
+        <script defer>
+            // When the document has loaded pull in the page header and footer skins
+            $(document).ready(function () {
+                // Change the v= to a different number to force clearing the cached version on the client browser
+                $('#header').load('./templates/DISTRICT.header.html?v=1');
+                $('#sidebar').load('./templates/DISTRICT.sidebar.html?v=1');
+                $('#footer').load('./templates/DISTRICT.footer.html?v=1');
+            })
+        </script>
+    </body>
+
+</html>
