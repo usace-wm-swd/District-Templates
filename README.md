@@ -1,2 +1,4 @@
-# District-Templates
-Every districts template rendered with the content from their page contained within an easy to change configuration file
+# Water Control Templates
+Hosts the working environment for USACE Water Control Website templates  
+Templates are designed to match the division websites  
+Example templates for various districts  
