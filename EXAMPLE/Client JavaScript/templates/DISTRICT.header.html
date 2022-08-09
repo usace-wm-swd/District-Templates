@@ -153,7 +153,7 @@
 							<div class="container-fluid">
 								<div class="sub-header">
 									<div class="site-name">US Army Corps of Engineers</div>
-									<div class="site-area">
+									<div class="site-area" data-lake="header-sub">
 									</div>
 								</div>
 							</div>
@@ -164,8 +164,9 @@
 				<script defer type="text/javascript" src="./js/header.js"></script>
                 <script>
                     // Setup the header subheading based on the current page title
-                    // Remove this script tag to manually set each page in the HTML file
-                    document.querySelector('[data-lake="header-sub"]').innerText = document.title
+                    if (document.querySelector('[data-lake="header-sub"]'))
+                        // Remove this script tag to manually set each page in the HTML file
+                        document.querySelector('[data-lake="header-sub"]').innerText = document.title
                 </script>
 				<script type="text/javascript">
 					// Setup the page's collapses
