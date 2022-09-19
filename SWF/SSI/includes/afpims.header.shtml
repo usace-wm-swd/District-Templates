@@ -148,7 +148,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="http://www.swf.usace.army.mil/Missions/Section-408/">Section 408
-                                        <i class="fas fa-caret-right"></i></a>
+                                        <i class="fas fa-caret-right"></i></a></li>
                             </ul>
                         </li>
                         <li><a href="https://www.swf.usace.army.mil/Locations/">
@@ -238,10 +238,10 @@
 
                         <a href="http://www.swf.usace.army.mil/Business-With-Us/Contracting/">Contracting</a>
                         <a href="http://www.swf.usace.army.mil/Business-With-Us/Office-of-Small-Business-Programs/">Office
-                            of Small Business Programs</a></li>
+                            of Small Business Programs</a>
                         <a
                             href="http://www.swf.usace.army.mil/Business-With-Us/Construction-Quality-Management-Training/">Construction
-                            Quality Management Training</a></li>
+                            Quality Management Training</a>
                     </div>
                     <div title="Click to Expand" class="collapsible-mobile">
                         Missions
@@ -365,25 +365,7 @@
     }
     setSubHeader()
 </script>
-<!-- <script defer>
-        // If a jump target does not exist, set the first item of the sidebar (if it exists) to the jump target
-            if (!document.querySelector("skip-target")) {
-                let menu_item_0 = document.querySelector('.sidebar-container')
-                if (menu_item_0) menu_item_0.id = "skip-target"
-            }
-
-    </script> -->
 <script>
-    // window.addEventListener("scroll", function (event) { stickyHeader(); })
-    // function stickyHeader() {
-    //     var header = document.getElementById("headerFloat");
-    //     var sticky = header.offsetTop;
-    //     if (window.pageYOffset > sticky) {
-    //         header.classList.add("sticky");
-    //     } else {
-    //         header.classList.remove("sticky");
-    //     }
-    // }
     var coll_mob = document.getElementsByClassName("collapsible-mobile");
     for (let col_m_idx = 0; col_m_idx < coll_mob.length; col_m_idx++) {
         coll_mob[col_m_idx].addEventListener("click", function () {
