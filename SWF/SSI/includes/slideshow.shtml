@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/includes/css/slideshow.css?_=1">
+<div class="slideshow-container">
+    <div class="slides fade">
+        <!-- <div id="slideNum" title="Current photo out of total project photos" class="slideshow-img-num">#/#</div> -->
+        <!-- <div id="slideDate" title="File Name" class="slideshow-date"></div> -->
+        <!-- <div id="slideCaption" class="slideshow-caption"></div> -->
+        <!-- <button id="prev" title="Previous Image" class="nav-btn"><i
+                        class="fas fa-caret-square-left"></i></button>
+                <button id="next" title="Next Image" class="nav-btn"><i class="fas fa-caret-square-right"></i></button> -->
+        <img title="Open in new tab" alt="lake image slideshow" id="slideImg" class="slideshow">
+    </div>
+</div>
+
+<script>
+    const images_path = "/web/frontpagepics/"
+    const files = [
+        "BardwellTower.jpg",
+        "BenbrookSpillway.jpg",
+        "CooperDam.jpg",
+        "LakePinesOutlet.jpg",
+        "LavonGates.jpg",
+        "LewisvilleSpillway.jpg",
+        "RayRobertsStillingBasin.jpg"
+    ]
+    // Prevent infinite loop, give up looking for a new file after 10 tries.
+    const slideImg = document.getElementById("slideImg")
+    updateImg()
+    let slideshowTimer = setInterval(function () {
+        updateImg()
+    }, 12000)
+
+    function updateImg() {
+        // Update the image in the DOM
+        const img_file = getProjectImg()
+        if (img_file) {
+            console.log(img_file)
+            const img_url = images_path + "/" + img_file
+            slideImg.src = img_url
+            slideImg.onclick = function () {
+                window.open(img_url)
+            }
+            slideImg.onerror = function (err) {
+                console.error(err)
+            }
+
+        } else {
+            console.log("Image was empty!")
+        }
+    }
+    function getProjectImg() {
+        // Grab a random project index and return the project for it
+        return files[Math.floor(Math.random() * files.length)]
+    }
+
+</script>

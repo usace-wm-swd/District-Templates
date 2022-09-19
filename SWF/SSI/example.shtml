@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>
+            Example SWF
+        </title>
+        <meta
+            content="Your, Keywords, Here, Separated, by, Commas"
+            name="Keywords" />
+        <meta content="U.S. Army Corps of Engineers - Example SWF" name="Description" />
+        <meta content="USACE Fort Worth District" name="Author" />
+        <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="IE=11" http-equiv="X-UA-Compatible" />
+        <link href="./images/logos/usace.png" rel="apple-touch-icon" sizes="192x144" />
+        <link href="./images/logos/usace.png" rel="icon" sizes="192x144" />
+        <link href="./css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="page-container">
+            <!--#include virtual="./includes/afpims.header.shtml" -->
+            <div class="page-wrap">
+                <div class="container-fluid">
+                    <!--#include virtual="./includes/breadcrumbs.shtml" -->
+                    <div class="page-content">
+                        <!--#include virtual="./includes/afpims.sidebar.shtml" -->
+                        <div class="col-md backend-cp-collapsible" id="topPane">
+                            <div class="box-top-container">
+                                <div class="text-padding box-container-item">
+                                    <div class="box-usace">
+                                        <h2 class="box-header-striped">
+                                            <span class="title">
+                                                Example SWF
+                                            </span>
+                                        </h2>
+                                        <div class="box-content box-content-border">
+                                            <div class="text-padding">
+                                               Your Content Here
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img alt="Wear your life jacket" class="life-jacket" id="modernth"
+                                        src="./images/logos/modernthx240.png" title="Wear your life jacket" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="returnTop" title="Return to Top of Page">
+                        Top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!--#include virtual="./includes/afpims.footer.shtml" -->
+
+</html>

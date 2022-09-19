@@ -1,0 +1,186 @@
+/* Lakepage Styles */
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  height: unset!important;
+}
+.rightpanel_wrapper {
+    font-size: 12px;
+    line-height: 1.4;
+}
+.rightpanel_wrapper p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.lake-img {
+  margin: auto 0;
+  text-align: center;
+}
+
+.lake-img.logo {
+    padding: 0;
+    text-align: left;
+}
+
+.lake-img img {
+    max-width: 65%;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.lake-img.logo img {
+    border: unset;
+}
+
+.text-padding {
+  padding: 0 10px;
+}
+
+.box-top-container {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.box-content-border {
+  border: 1px solid black;
+  box-shadow: 1px 1px black;
+  border-top: none;
+  overflow-x: auto;
+  background-color:white;
+  margin:auto
+}
+.box-content-border table {
+  min-width: 500px;
+}
+
+#contentTable {
+  table-layout: fixed;
+}
+
+td {
+  /* overflow: hidden; */
+  font-size: 1em;
+  text-overflow: ellipse;
+  word-wrap: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+a {
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Make sure the links don't create a scroll */
+.text-padding a {
+    word-break: break-all;
+}
+hr {
+    border: solid 1px black;
+    width: 96%;
+    color: #FFFF00;
+    height: 1px;
+}
+.box-usace p {
+    margin-bottom: 32px;
+}
+
+.box-container-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.life-jacket {
+    position: fixed;
+    max-width: 5vw;
+    height: auto;
+    width: 25%;
+    right: 2%;
+    top: 100px;
+    z-index: 5;
+}
+
+.iframe-map {
+     width: 100%; 
+     height: 50vh;
+    }
+
+/* Style rows to shrink with page */
+.flex-table {
+    display: flex;
+    gap: 10px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    flex-shrink: 3;
+}
+.flex-table a {
+    width: 25%;
+    word-break: unset;
+}
+
+
+@media only screen and (max-width: 480px) {
+  .lake-img img {
+    max-width: 100%; 
+    }
+  td {
+    font-size: 0.8em;
+  }
+
+  .serh-grid {
+    overflow-x: auto;
+    display: block;
+  }
+  .text-padding {
+    padding: 0;
+    padding-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+    .flex-table {
+        flex-direction: column;
+    }
+    .flex-table a {
+        width: 100%;
+    }
+    .life-jacket {
+        position: relative;
+        height: 80px;
+        width: 80px;
+        max-width: unset;
+        left: 50%;
+        top: -10px;
+        z-index: 5;
+        transform: translateX(-50%);
+    }
+    .lake-img img {
+    max-width: 100%; 
+    }
+  .box-top-container {
+    flex-wrap: wrap;
+  }
+
+  .contact-info {
+    margin: auto;
+  }
+  .text-padding {
+    padding: 5px;
+  }
+}

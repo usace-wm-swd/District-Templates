@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/css/afpims.sidebar.css?_=3">
+    <body>
+        <div id="leftPane" class="col-md-3 backend-cp-fixed">
+            <div class="box-usace">
+                <h2 class="box-header-striped">
+                    <span class="title">Water Management Menu</span>
+                    <span class="rss"></span>
+                </h2>
+                <div id="ContentPane" class="box-content">
+                    <div>
+                        <div>
+                            <div class="ac-jump-menu-wrapper ac-hide ac-show-mobile-only">
+                                <div class="ac-jump-menu-success alert alert-success">
+                                    <i class="fas fa-spinner fa-spin"></i>Redirecting...
+                                </div>
+                                <select class="ac-jump-menu" id="mobilejumpmenu">
+                                    <option data-new-window="False" value="">Select...</option>
+                                    <option data-new-window="False" value="/selectreport/">
+                                        Water Management Reports</option>
+                                    <option data-new-window="False" value="/radar/">
+                                        Hydrologic Query</option>
+                                    <option data-new-window="False" value="/pertinentdata/">
+                                        Pertinent Data</option>
+                                    <option data-new-window="False" value="https://www.swf.usace.army.mil/About/Lakes-and-Recreation-Information/">
+                                        Recreation Info</option>
+                                    <option data-new-window="False" value="https://www.swf-wc.usace.army.mil/map/">
+                                        Project Status Map</option>
+                                    <option data-new-window="False" value="/relatedsites/">
+                                        Related Sites</option>  
+                                    <option data-new-window="False" value="https://www.swl-wc.usace.army.mil">
+                                        SWL Water Management</option>
+                                    <option data-new-window="False" value="https://www.swt-wc.usace.army.mil">
+                                        SWT Water Management</option>      
+                                </select>
+                            </div>
+                            <div class="sidebar-container ac-hide ac-hide-mobile-only">
+                                <ul class="sb-main-menu">
+                                    <li><a href="/">Home</a>
+                                    </li>
+                                    <li><a href="/selectreport/" target="_self" tabindex="0" >
+                                        Water Management Reports</a>
+                                    </li>
+                                    <li><a href="/radar/" target="_self" tabindex="0" >Hydrologic Query</a>
+                                    </li>
+                                    <li><a href="/pertinentdata/" target="_self" tabindex="0" >Pertinent Data</a>
+                                    </li>
+                                    <li><a href="https://www.swf.usace.army.mil/About/Lakes-and-Recreation-Information/"
+                                        target="_self" tabindex="0" >Recreation Info</a>
+                                    </li>
+                                    <li><a href="https://www.swf-wc.usace.army.mil/map/"
+                                        target="_self" tabindex="0" >Project Status Map</a>
+                                    </li>
+                                    <li><a href="/relatedsites/" target="_self" tabindex="0" >Related Sites</a>
+                                    </li>
+                                    <li><a href="https://www.swl-wc.usace.army.mil/" target="_self" tabindex="0" >SWL Water Management</a>
+                                    </li>
+                                    <li><a href="https://www.swt-wc.usace.army.mil/" target="_self" tabindex="0" >SWT Water Management</a>
+                                    </li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script defer="">
+            const mobilejumpmenu = document.getElementById("mobilejumpmenu")
+            mobilejumpmenu.addEventListener("change", function () {
+                let url = this.value
+                window.location = url
+            })
+        </script>
+    </body>
+
+</html>
