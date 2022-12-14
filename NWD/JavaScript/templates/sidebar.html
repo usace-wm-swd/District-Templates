@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/css/sidebar.css?_=1">
+    <body>
+        <div id="leftPane" class="col-md-3 backend-cp-fixed">
+            <div class="box-usace">
+                <h2 class="box-header-striped">
+                    <span class="title">Fort Worth District<br>Lakes and Recreation Menu</span>
+                    <span class="rss"></span>
+                </h2>
+                <div id="ContentPane" class="box-content">
+                    <div>
+                        <div>
+                            <div class="ac-jump-menu-wrapper ac-hide ac-show-mobile-only">
+                                <div class="ac-jump-menu-success alert alert-success">
+                                    <i class="fas fa-spinner fa-spin"></i>Redirecting...
+                                </div>
+                                <select class="ac-jump-menu" id="mobilejumpmenu">
+                                    <option value="">Select...</option>
+                                    <option value="/" class="ac-main-menu">
+                                        Home</option>
+                                    <option value="/about" class="ac-main-menu">
+                                        About</option>
+                                    <option value="/about/1" class="ac-sbm1">
+                                        - About Sub 1</option>
+                                    <option value="/about/2"
+                                        class="ac-sbm2">
+                                        -- About Sub 2</option>
+
+                                </select>
+                            </div>
+                            <div class="sidebar-container ac-hide ac-hide-mobile-only">
+                                <ul class="sb-main-menu">
+                                    <li><a href="/">Home</a>
+                                    </li>
+                                    <li><a href="/about">About <i
+                                                class="fas fa-caret-right"></i></a>
+                                        <ul class="sb-sub-menu">
+                                            <li><a href="/about/1">Sub 1 <i class="fas fa-caret-right"></i></a>
+                                                <ul class="sb-sub-menu">
+                                                    <li><a href="/about/2">Sub 2</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script defer="">
+            const mobilejumpmenu = document.getElementById("mobilejumpmenu")
+            mobilejumpmenu.addEventListener("change", function () {
+                let url = this.value
+                window.location = url
+            })
+        </script>
+    </body>
+
+</html>

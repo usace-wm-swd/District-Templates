@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<style>
+    /* #breadcrumbs {
+    font-size: 18px;
+    margin: auto 15px;
+    padding: 20px 0 20px;
+    color: #ddd;
+    font-family: "Font Awesome 5 Free";
+}
+
+.skin-breadcrumb {
+    color: #06c;
+    font-weight: 900;
+} */
+#breadcrumbs {
+  display: flex;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  margin: auto 15px;
+  padding-bottom: 10px;
+  
+  color: #ddd;
+  /* font-family: "Font Awesome 5 Free"; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  z-index: -1;
+}
+
+.breadcrumb-link {
+  color: #06c;
+  text-decoration: none;
+  font-weight: 900;
+}
+.breadcrumb-link:not(:first-child):before,
+.breadcrumb-current:before {
+  content: "/";
+  margin: 0 5px;
+  color: black;
+  text-decoration: none;
+}
+.breadcrumb-current {
+  color: #999;
+}
+@media (max-width: 768px) {
+  #breadcrumbs {
+    padding: 10px 0;
+  }
+}
+
+@media only print {
+  #breadcrumbs {
+    display: none !important;
+  }
+}
+
+</style>
+<html>
+<link rel="stylesheet" href="/css/breadcrumbs.css?_=1">
+<div id="breadcrumbs">
+</div>
+<script>
+    function buildBreadcrumbs(url) {
+        let breadcrumbs = document.getElementById("breadcrumbs")
+        // Let the dev know they have not included the
+        if (!breadcrumbs) {
+            console.error("Cannot find id=\"breadcrumbs\", you must add <div id=\"breadcrumbs\"></div> to the document before importing the breadcrumbs script")
+            return
+        }
+        // Default the location to the current URL
+        var loc = window.location.pathname;
+        // Override the location, check if the user included the domain/protocol
+        if (url && !url.includes("://")) loc = url
+        // Otherwise assume just a path was given
+        else if (url) loc = url.split("/").splice(3).join("/")
+        // Break the path into respective directories
+        var dirs = loc.substring(0, loc.lastIndexOf('/')).split("/")
+        let _url = "/"
+        
+        // No crumbs on the home page, make a home btn for every other page
+        breadcrumbs.innerHTML = ""
+        console.log(dirs, dirs.length)
+        if (!dirs[0] && dirs.length == 1) return
+        let home_crumb = '<a href="/" class="breadcrumb-link"><i class="fa fa-home"></i></a>'
+        let bc_str = home_crumb
+        breadcrumbs.innerHTML = home_crumb
+        // Build URLs for each crumb and add to the DOM
+        let skip_root = false
+        if (dirs.length == 2) skip_root = true
+        for (let d = 0; d < dirs.length; d++) {
+            if (d==1 && skip_root) continue
+            if (!dirs[d]) continue
+            let crumb = dirs[d].toUpperCase()
+            if (d < dirs.length) {
+                _url += dirs[d] + "/"
+                // Make links for the breadcrumbs
+                home_crumb += `<a href=${_url} class="breadcrumb-link">${crumb.replace("%20", " ")}</a>`
+            }
+        }
+         // The final crumb is the current page, no link
+        home_crumb += `<span class="breadcrumb-current">${document.title.toUpperCase()}</span>`
+        breadcrumbs.innerHTML = home_crumb
+    }
+    // or run - to use current URL on page
+    buildBreadcrumbs()
+</script>
+</html>
