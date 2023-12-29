@@ -8,6 +8,7 @@
   object-fit: contain;
   background: #555;
   border-radius: 5px;
+  max-width: 800px;
 }
 
 /* Navigation buttons to click through slides */
