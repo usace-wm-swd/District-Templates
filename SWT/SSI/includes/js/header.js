@@ -1,11 +1,14 @@
 const burgerBtn = document.getElementById("burgerBtn")
+const SEARCH_ELEM = document.querySelector("#headerSearch")
+const SEARCH_BTN = document.querySelector("#searchButton")
+const SEARCH_CONT = document.querySelector(".search-bar")
 // Check system heartbeat - are files updated and making it to the server?
 async function checkHeartbeat() {
     await fetch("/data/heartbeat.json").then(res => res.json()).then(d => {
         document.querySelectorAll(".site-notice").forEach(elem => {
             const LAST_UPDATED = new Date(d.updated)
             const NOW = new Date()
-            
+
             const HOURS_SINCE = Math.floor((NOW - LAST_UPDATED) / 39e5)// 1 Hour 5 Minutes
             // If the last timestamp is > 2 hours files are no longer being pushed to the server
             if (HOURS_SINCE >= 1) {
@@ -22,6 +25,37 @@ async function checkHeartbeat() {
         })
     })
 }
+
+
+// Handle user search
+if (SEARCH_BTN) {
+    if (window.location.pathname.includes("/search")) {
+        if (SEARCH_CONT) {
+            SEARCH_CONT.style.display = "none";
+        }
+    }
+    SEARCH_BTN.addEventListener("click", (e) => {
+        const input_str = SEARCH_ELEM.value;
+        if (input_str.length === 0) {
+            let restore_str = SEARCH_ELEM.placeholder
+            SEARCH_ELEM.placeholder = "Enter a Value to Search!"
+            SEARCH_ELEM.style.border = "1px solid red"
+            SEARCH_ELEM.blur();
+            setTimeout(() => {
+                SEARCH_ELEM.placeholder = restore_str
+                SEARCH_ELEM.style.border = "1px solid black"
+            }, 5000)
+            return
+        }
+        //window.open(`/search?query=${input_str}`);
+        window.location.href = `/search?query=${input_str}`;
+    })
+}
+SEARCH_ELEM.addEventListener("keydown", (e) => {
+    if (event.key === "Enter") {
+        SEARCH_BTN.click()
+    }
+});
 
 
 // Mobile Burger Bar
@@ -122,11 +156,11 @@ if (nav_down) {
         } else {
             // Get the y of the second page container
             const y = document.querySelectorAll("#page-container")[1]
-                .getBoundingClientRect().top 
-                + window.pageYOffset 
+                .getBoundingClientRect().top
+                + window.pageYOffset
                 + header_offset;
             // Scoot back up the header height
-            window.scrollBy({top: y, behavior: "smooth"})
+            window.scrollBy({ top: y, behavior: "smooth" })
         }
     };
 }

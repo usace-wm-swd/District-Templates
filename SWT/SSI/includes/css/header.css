@@ -2,6 +2,7 @@
 body {
     font-family: Open Sans,Arial,Helvetica,sans-serif!important;
 }
+
 html,
 body,
 span,
@@ -26,6 +27,7 @@ summary {
   margin: 0;
   padding: 0;
   border: 0;
+  /* font: inherit; */
   vertical-align: baseline;
 }
 :root {
@@ -67,6 +69,32 @@ h6 {
   max-width: 1400px;
   min-height: 28px;
   display: flex;
+}
+
+.search-bar {
+    margin: auto;
+    margin-right: 15px;
+}
+.search-bar i {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: auto;
+    padding: 5px;
+    margin-left: 0;
+}
+.search-bar input {
+    background: hsla(0,0%,100%,.2);
+    border: none;
+    color: #ccc;
+    font-size: 14px;
+    padding: 2px 8px;
+    width: 150px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .page-wrap {
