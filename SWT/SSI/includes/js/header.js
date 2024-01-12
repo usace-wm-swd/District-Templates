@@ -52,7 +52,7 @@ if (SEARCH_BTN) {
     })
 }
 SEARCH_ELEM.addEventListener("keydown", (e) => {
-    if (event.key === "Enter") {
+    if (e.key === "Enter") {
         SEARCH_BTN.click()
     }
 });
