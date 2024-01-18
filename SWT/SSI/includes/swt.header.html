@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/includes/css/header.css?_=16">
-    <link rel="stylesheet" href="/includes/css/login.css?_=1">
-    <link rel="stylesheet" href="/includes/css/official.gov.css?_=3">
-    <script defer src="/includes/js/header.js?_=9"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> -->
+    <link href="/assets/fontawesome-6.5.1/css/fontawesome.css" rel="stylesheet">
+    <link href="/assets/fontawesome-6.5.1/css/brands.css" rel="stylesheet">
+    <link href="/assets/fontawesome-6.5.1/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="/includes/css/header.css?_=3">
+    <link rel="stylesheet" href="/includes/css/official.gov.css?_=1">
+    <script defer src="/includes/js/header.js?_=1"></script>
     <script src="/includes/js/gov-banner.min.js?_=1" defer></script>
     <script defer src="/js/analytics.js"></script>
     <div id="skip-link-holder"><a id="skip-link" href="#skip-target">Skip to main content
@@ -34,7 +36,7 @@
                         <div class="gov-banner-content">
                             <p class="banner-contentRight-text"><b>Secure .mil websites use HTTPS</b></p>
                             <div> A <b>lock (<span class="gov-banner-lock-icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="52" height="64" viewBox="0 0 52 64">
+                                            width="52" height="64" viewbox="0 0 52 64">
                                             <title>lock </title>
                                             <path class="icon_lock" fill-rule="evenodd"
                                                 d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z">
@@ -54,7 +56,7 @@
                     </a>
                     <div class="reg"><i class="far fa-registered"></i></div>
                     <div id="desktop-menu">
-                        <ul class="top-level-menu" style="margin: 0; margin-left: 115px; ">
+                        <ul class="top-level-menu">
                             <li><a href="/"><i class="fa fa-home"></i></a>
                             </li>
                             <li><a>Content <i class="fas fa-caret-down"></i></a>
@@ -144,6 +146,12 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+                    <div class="search-bar" style="margin: auto; margin-right: 1em;">
+                        <input id="headerSearch" type="text" placeholder="Search..." minlength="1" maxlength="50"
+                            title="Search the water control site pages"
+                            aria-label="Search the water control site pages">
+                        <i id="searchButton" class="fas fa-search" aria-label="Search Button"></i>
                     </div>
                     <span class="burger-bar" id="burgerBtn" onclick="openNav()"><i class="fas fa-bars"></i></span>
                 </div>
@@ -254,6 +262,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </header>
     <p id="skip-target-holder"><a id="skip-target" name="skip-target" class="skip" tabindex="0" href="#skip-target"
             innertext="Start of main content" title="Start of main content"></a></p>

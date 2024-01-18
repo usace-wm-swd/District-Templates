@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>SWT Template Test</title>
-		<meta name="Description" content="U.S. Army Corps of Engineers Sacramento Water Control Data System" />
-		<link rel="stylesheet" href="/css/body.css" />
-		<link rel="stylesheet" href="/css/breadcrumbs.css" />
-		<link rel="stylesheet" href="/css/jumpMenu.css" />
-		<!-- <script type="text/javascript" src="/js/main.js"></script> -->
-	</head>
 
-	<body>
-		<div id="page-container">
-			<header id="header">
-<!--#include virtual="includes/SWT.header.html" -->
-			</header>
-			<div class="page-wrap">
-				<div class="container-fluid">
-					<div id="breadcrumbs">
-						<span>
-							<a href="/index.html" class="skin-breadcrumb"><span class="fa fa-home"></span></a>
-							<!-- Additional breadcrumb entries
-							<span style="text-decoration: none"> / </span>
-							<span style="text-decoration: none">
-								<a href="somelink.html">Landing page</a>
-							</span>
-							<span style="text-decoration: none"> / </span>
-							<span style="text-decoration: none">
-								<span>Current page</span>
-							</span>
-						-->
-						</span>
-					</div>
-					<div class="page-content">
-						<sidebar id="sidebar">
-<!--#include virtual="includes/SWT.sidebar.html" -->
-						</sidebar>
-						<div id="topPane" class="col-md backend-cp-collapsible">
-							<!-- Page Content Here -->
-							<div class="box-usace">
-								<h2 class="box-header-striped">
-									<span class="titleLabel title">Content Title</span>
-									<span class="rss"></span>
-								</h2>
-								<div class="box-content" style="background-color:white;margin:auto">
-									<div class="content">
-										<!-- Box Content Here -->
-                                        Your content here
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<button id="returnTop" title="Return to Top of Page">Top</button>
-				</div>
-			</div>
-		</div>
-		<footer id="footer">
-<!--#include virtual="includes/SWT.footer.html" -->
-		</footer>
-	</body>
+    <head>
+        <title>Tulsa District - Water Control Data System</title>
+        <meta name="Keywords"
+            content="Corps of Engineers, Tulsa District, USACE Tulsa District, Corps, Engineer, Dam, Lake, Water Safety, Oklahoma, Altus Lake, Arbuckle Lake, Arcadia Lake, Big Hill Lake, Birch Lake, Broken Bow Lake, Canton Lake, Cheney Lake, Chouteau, LD17, Copan Lake, Council Grove Lake, Lake Texoma, El Dorado Lake, Elk City Lake, Eufaula Lake, Fall River Lake, Ft. Cobb Lake, Ft. Gibson Lake, Foss Lake, Ft. Supply Lake, Great Salt Plains Lake, Heyburn Lake, Lake Hudson, Hugo Lake, Hulah Lake, John Redmond Lake, Kaw Lake, Lake Kemp, Keystone Lake, Marion Lake, McGee Creek Reservoir, Lake Meredith, Newt Graham, LD18, Oologah Lake, Pat Mayse Lake, Pensacola, Grand Lake,Pine Creek Lake, RS Kerr, LD15, Sardis Lake, Skiatook Lake, Tenkiller Lake, Lake Thunderbird, Tom Steed Lake, Toronto Lake, Waurika Lake, W.D. Mayo, LD14, Wister Lake, Webbers Falls, LD16" />
+        <meta name="Description" content="Tulsa District Water Control Home Page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="Author" content="USACE Tulsa District Water Control" />
+        <meta charset="UTF-8">
+        <link rel="apple-touch-icon" sizes="192x144" href="/images/logos/usace.png" />
+        <link rel="icon" sizes="192x144" href="/images/logos/usace.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <!-- Add W3 Icons and Fonts for Page -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            /* Override existing styles to match other districts */
+            #page-container {
+                background-color: grey !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--#include virtual="/includes/swt.header.html" -->
+        <div id="page-container">
+            <div class="page-wrap">
+                <!-- <br /><br /> -->
+                <div class="container-fluid">
+                    <!--#include virtual="/includes/breadcrumbs.html" -->
+                    <div class="page-content">
+                        <!--#include virtual="/includes/swt.sidebar.html" -->
+                        <div id="topPane" class="col-md backend-cp-collapsible">
+                            <br>
+                            <div class="box-usace">
+                                <h2 class="box-header-striped">
+                                    <span id="titleLabel" class="title">Tulsa District Water Management</span>
+                                    <span class="rss"></span>
+                                </h2>
+                                <div id="contentPaneBody" class="box-content">
+                                    <div id="content">
+                                        Content Here
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#include virtual="/includes/swt.footer.html" -->
+    </body>
+
 </html>

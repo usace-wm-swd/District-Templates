@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- NOTICE: For a professional production deployment. Delete all of these comments before you publish this! -->
+    <link rel="stylesheet" href="/includes/css/sidebar.css?_=1">
+    <script defer src="/includes/js/sidebar.js?_=1"></script>
+    <body>
+        <div id="leftPane" class="col-md-3 backend-cp-fixed">
+            <div class="box-usace">
+                <h2 class="box-header-striped">
+                    <span class="title">Water Control Data System Menu</span>
+                    <span class="rss"></span>
+                </h2>
+                <div id="ContentPane" class="box-content">
+                    <div>
+                        <div>
+                            <div class="ac-jump-menu-wrapper ac-hide ac-show-mobile-only">
+                                <div class="ac-jump-menu-success alert alert-success">
+                                    <i class="fas fa-spinner fa-spin"></i>Redirecting...
+                                </div>
+                                <select class="ac-jump-menu" id="mobilejumpmenu">
+                                    <!-- Please keep these in the same order and update to match your paths -->
+                                    <option data-new-window="False" value="">Select...</option>
+                                    <!-- Delete if you have no map -->
+                                    <option data-new-window="False" title="Project Status Map" value="/map">
+                                        Project Status (Map)</option>
+                                    <!-- Page containing links to all your reports -->
+                                    <option data-new-window="False" title="Water Management Reports" value="/reports">
+                                        Water Management Reports</option>
+                                    <option data-new-window="False" title="Project Hourly Data" value="/stations">
+                                        Project Hourly Data</option>
+                                    <option data-new-window="False" title="DCP Status" value="/dcpstatus">
+                                        DCP Status</option>
+                                    <option data-new-window="False" title="Hydrologic Query" value="/hydrologicdata">
+                                        Hydrologic Query</option>
+                                    <option data-new-window="False" title="Related Sites" value="/relatedsites">
+                                        Related Sites</option>
+                                    <option data-new-window="False" title="Recreation Info" value="https://www.YOUR DISTRICT.usace.army.mil/Missions/Recreation/">
+                                        Recreation Info</option>
+                                    <!-- Add links to other districts in your division here -->
+                                </select>
+                            </div>
+                            <!-- These links need to match the links above, these are what show on the mobile dropdown -->
+                            <div class="sidebar-container ac-hide ac-hide-mobile-only">
+                                <ul class="sb-main-menu">
+                                    <li><a title="Project Status Map" href="/map" target="_self" tabindex="0">Project Status (Map)</a>
+                                    </li>
+                                    <li><a href="/reports" target="_self" tabindex="0">Water Management Reports</a>
+                                    </li>
+                                    <li><a href="/stations" target="_self" tabindex="0">Project Hourly Data</a>
+                                    </li>
+                                    <li><a href="/hydrologicdata" target="_self" tabindex="0">Hydrologic Query</a>
+                                    </li>
+                                    <li><a title="DCP Status" href="/dcpstatus" target="_self" tabindex="0">DCP Status</a>
+                                    </li>
+                                    <li><a title="Related Sites" href="/relatedsites" target="_self" tabindex="0">Related Sites</a>
+                                    </li>
+                                    <li><a href="https://www.YOUR DISTRICT.usace.army.mil/Missions/Recreation" target="_self" tabindex="0">Recreation Info</a>
+                                    </li>
+                                    <!-- Add links to other districts in your division here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
