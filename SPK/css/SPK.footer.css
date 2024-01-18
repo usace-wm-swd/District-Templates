@@ -164,6 +164,7 @@ p {
 
 .f-link:hover {
 	text-decoration: underline;
+	color: white;
 }
 
 @media (min-width: 992px) {

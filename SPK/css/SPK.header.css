@@ -62,20 +62,27 @@ pre {
 }
 
 a {
-	color: #007bff;
+	color: #0072ed;
 	text-decoration: none;
 	background-color: transparent;
 }
-#main-header {
-	top: 0;
-	z-index: 99;
-	position: fixed;
-	width: 100%;
-	
+
+a:hover {
+	color: #0072ed;
+}
+
+/* from bootstrap.css */
+svg {
+	overflow: hidden;
+	vertical-align: middle;
 }
 
 #mobileNav {
 	display: none;
+}
+
+.hide {
+	display: none !important;
 }
 
 .main-bar {
@@ -92,19 +99,30 @@ a {
 }
 
 .page-wrap {
-	padding-top: 73px;
-	margin-left: auto;
-	margin-right: auto;
+	padding-top: 103px; /* legacy/non-sticky header */
+	margin-bottom: 200px;
+	margin: 0 auto;
+	max-width: 1400px;
+	background-color: white;
 }
 
 .sticky {
-	position: fixed;
+	position: sticky !important;
 	top: 0;
 	width: 100%;
 }
 
+.sticky + .page-wrap {
+	padding-top: unset; /* legacy/non-sticky header */
+}
+
 #header {
-	position: relative;
+	z-index: 99;
+
+	/* legacy/non-sticky header */
+	top: 0; 
+	position: fixed;
+	width: 100%;
 }
 
 #page-container {
@@ -198,6 +216,7 @@ a {
 	vertical-align: middle;
 	display: flex;
 	flex-direction: row;
+	width: 100%;
 }
 
 .options-block {
@@ -220,7 +239,7 @@ a {
 	vertical-align: middle;
 }
 
-.collapsible-mobile.active,
+#header .active,
 .collapsible:hover {
 	color: white !important;
 }
@@ -309,8 +328,6 @@ a {
 .burger-bar {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
-	float: right;
-	position: absolute;
 	transition: all 0.2s ease-in-out;
 	right: 0;
 	top: 0;
@@ -326,7 +343,7 @@ a {
 	position: fixed;
 	z-index: -99;
 	top: 0;
-	right: 0;
+	left: 400px;
 	overflow-x: hidden;
 	background-color: rgba(0, 0, 0, 0.9);
 	transition: 0.5s;
@@ -335,23 +352,24 @@ a {
 }
 
 .overlay.open {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	padding: 32px;
 	z-index: 99;
 	visibility: visible;
+	left: 0;
 }
 
 .overlay-content {
 	position: relative;
 	color: white;
-	top: 10%;
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
 	width: 100%;
 	text-align: left;
 	z-index: 1;
+	margin: 16px 0;
 }
 
 .overlay a {
@@ -367,10 +385,12 @@ a {
 }
 
 .overlay .closebtn {
-	position: absolute;
-	top: 20px;
-	right: 45px;
-	font-size: 60px;
+    color: hsla(0,0%,100%,.5);
+    display: block;
+    font-size: 24px;
+    position: absolute;
+    right: 32px;
+    top: 16px;
 }
 
 .closebtn:hover::before {
@@ -398,8 +418,7 @@ a {
 
 .collapsible-mobile:before {
 	display: inline-table;
-	position: fixed;
-	float: left;
+	float: right;
 	right: 5vw;
 	white-space: nowrap;
 	content: "+";
@@ -414,6 +433,9 @@ a {
 	width: 1em;
 	margin-top: -1px;
 }
+.collapsible-mobile.active:before {
+	content: "-";
+}
 
 .overlay-content > .collapsible-mobile {
 	border-left: inherit;
@@ -426,7 +448,7 @@ a {
 	background-color: transparent;
 }
 
-.active:before {
+.main-header .active:before {
 	content: "-";
 	alt: "Click to Contract";
 	color: white;
@@ -568,10 +590,75 @@ a {
 	padding-left: 82px;
 }
 
+#warning {
+	display: none;
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding: 1em;
+	border: 5px solid black;
+	background-color: darkred;
+	color: white;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#notice {
+	display: none;
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding: 1em;
+	border: 5px solid black;
+	background-color: darkorange;
+	color: black;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#main-search {
+	bottom: 10px;
+	position: absolute;
+	right: 15px;
+}
+
+#main-search input[type='text'] {
+    background: hsla(0,0%,100%,.2);
+    border: none;
+    color: #ccc;
+    font-size: 14px;
+    padding: 2px 8px;
+    width: 150px;
+	outline-offset: -2px;
+	height: revert;
+}
+
+#main-search button {
+    color: #ccc;
+	cursor: pointer;
+	background-color: inherit;
+	border: inherit;
+	padding: 0;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0 #d3d3d3!important;
+    font-weight: 700;
+    outline: 1px solid #d3d3d3!important;
+}
+
+#mobile-menu-trigger, #search-form-trigger {
+    color: #ccc!important;
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+}
+
 /* Mobile Settings */
 
 @media only screen and (max-width: 768px) {
-	#content {
+	#notice,#warning {
+		top: 109px;
 	}
 
 	#mobile-menu {
@@ -587,14 +674,34 @@ a {
 		display: initial;
 	}
 
-	.burger-bar {
-		display: inline-block;
+	#main-search {
+		background: #000;
+		border: 1px solid #555;
+		box-shadow: 0 3px 10px rgba(0,0,0,.25);
+		height: 60px;
+		opacity: 0;
+		padding: 16px;
+		position: absolute;
+		right: -220px;
+		top: 68px;
+		transition: right .2s ease-in-out;
+		width: 206px;		
 	}
 
-	.overlay .closebtn {
-		font-size: 40px;
-		top: -5px;
-		right: 5px;
+	#main-search.search-open {
+		opacity: 1;
+		right: 16px;
+		top: 36px;
+		z-index: 50;
+	}
+
+	#search-form-trigger.search-open span::before {
+		content: "";
+		margin-right: 4px;
+	}
+
+	.burger-bar {
+		display: inline-block;
 	}
 
 	.page-title {
@@ -714,6 +821,10 @@ a {
 }
 
 @media only screen and (max-width: 502px) {
+	#notice,#warning {
+		top: 124.5px;
+	}
+
 	.page-wrap {
 		padding-top: 125px;
 	}

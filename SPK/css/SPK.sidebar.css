@@ -12,7 +12,7 @@
 	line-height: 1.4rem;
 	margin-bottom: 0;
 	z-index: 3;
-	scroll-margin-top: 73px;
+	scroll-margin-top: 102px;
 }
 
 .box-usace .box-header-striped:before {
@@ -129,6 +129,7 @@ div.listItem a > img {
 	.col-md-3 {
 		-ms-flex: 0 0 25%;
 		flex: 0 0 25%;
+		max-width: 100%;
 	}
 
 	.col-md {
@@ -141,12 +142,18 @@ div.listItem a > img {
 }
 @media only screen and (max-width: 769px) {
 	.box-usace .box-header-striped {
-		scroll-margin-top: 109px;
+		scroll-margin-top: 138px;
 	}
 }
 
 @media only screen and (max-width: 502px) {
 	.box-usace .box-header-striped {
-		scroll-margin-top: 125px;
+		scroll-margin-top: 154px;
+	}
+}
+
+@media only screen and (max-width: 486px) {
+	.box-usace .box-header-striped {
+		scroll-margin-top: 174px;
 	}
 }

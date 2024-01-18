@@ -1,7 +1,47 @@
-				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous"/>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Roboto:400,700"/>
+				<link rel="stylesheet" href="/css/official.gov.css">
 				<link rel="stylesheet" href="/css/SPK.header.css"/>
+				<script src="/js/gov-banner.js" defer></script>
+				<script src="//search.usa.gov/javascripts/remote.loader.js"></script>
+
 				<!-- Load CSS in html to prevent element flashing as page loads in -->
+				<div id="gov-banner" class="gov-banner-container hide">
+					<span class="gov-banner-inner">
+						<div class="gov-banner-flag">
+							An official website of the United States government
+							<div class="gov-banner-expand" tabindex="0"><u>Here's how you know
+									<span class="expand-more-container"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+											viewBox="0 0 24 24" width="24">
+											<path d="M0 0h24v24H0z" fill="none"></path>
+											<path class="expand-more" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+										</svg></span></u></div>
+						</div>
+						<div class="gov-banner-panel">
+							<div class="gov-banner-panel-item">
+								<span class="gov-banner-mil"></span>
+								<div class="gov-banner-content">
+									<p class="banner-contentLeft-text"><b> Official websites use .mil </b></p>A <b>.mil</b>
+									website belongs to an official U.S. Department of Defense organization in the United States.
+								</div>
+							</div>
+							<div class="gov-banner-panel-item https">
+								<span class="gov-banner-lock"></span>
+								<div class="gov-banner-content">
+									<p class="banner-contentRight-text"><b>Secure .mil websites use HTTPS</b></p>
+									<div> A <b>lock (<span class="gov-banner-lock-icon"><svg xmlns="http://www.w3.org/2000/svg"
+													width="52" height="64" viewBox="0 0 52 64">
+													<title>lock </title>
+													<path class="icon_lock" fill-rule="evenodd"
+														d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z">
+													</path>
+												</svg></span>)</b> or <b> https://</b> means you’ve safely connected to the .mil
+										website. Share sensitive information only on official, secure websites.</div>
+								</div>
+							</div>
+						</div>
+					</span>
+				</div>
 				<div id="main-header">
 					<div class="main-bar">
 						<div class="header-float">
@@ -225,16 +265,31 @@
 												<li><a href="/glossary.html">Glossary</a></li>
 												<li><a href="https://www.spk.usace.army.mil/">SPK District Home Page</a></li>
 												<li><a href="https://www.usace.army.mil/">USACE Home Page</a></li>
+												<li><a href="https://water.usace.army.mil/">Access to Water (A2W)</a></li>
+												<li><a href="https://cwms-data.usace.army.mil/cwms-data">CWMS RADAR REST API</a></li>
 											</ul>
 										</li>
 									</ul>
 								</div>
+								<div id="main-search">
+									<!-- Search.gov integration -->
+									<form id="search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+										<input type="hidden" name="affiliate" id="affiliate" value="spk-wc" autocomplete="off" />
+										<input type="text" name="query" id="query" autocomplete="off" placeholder="Search Water Management..." class="usagov-search-autocomplete" />
+										<button type="submit" class="fas fa-search" name="commit" value="Search" data-disable-with="Search"></button>
+									</form>
+								</div>
 								<div id="mobile-menu">
-									<span class="burger-bar" id="burgerBtn" onclick="openNav()">&#9776;</span>
+									<a id="search-form-trigger" href="javascript:;">
+										<span class="burger-bar fas fa-search" id="searchBtn" onclick="toggleSearch()"></span>
+									</a>
+									<a id="mobile-menu-trigger" href="javascript:;">
+										<span class="burger-bar fas fa-bars" id="burgerBtn" onclick="openNav()"></span>
+									</a>
 								</div>
 							</div>
 							<div id="mobileNav" class="overlay">
-								<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+								<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="fas fa-times"></span></a>
 								<div id="mobileNavContent" class="overlay-content">
 									<a class="home mobile-top-level-menu" href="/">Home</a>
 									<div title="Click to Expand" class="collapsible-mobile mobile-top-level-menu">
@@ -303,4 +358,26 @@
 
 				</script>
 
+				<div id="warning">
+				</div>
+				<div id="notice">
+				</div>
+				<script type="text/javascript">
+					for(let file of ['notice', 'warning']) {
+						fetch(file).then(function(res) {
+							if(res.status === 200 && !res.redirected) {
+								return res.text();
+							} else {
+								return "";
+							}
+						}).then(function(text) {
+							let notice = document.getElementById(file);
+							notice.textContent = text;
+							if(notice.textContent?.trim() != "") {
+								notice.style.display = "block";
+							}
+						});
+					}
+				</script>
 				<div id="header-pane"></div>
+

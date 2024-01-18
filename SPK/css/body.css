@@ -1,11 +1,13 @@
-*, ::after, ::before {
-    box-sizing: border-box;
+/* Revert bootstrap changes */
+dd {
+	margin-left: revert;
 }
 
-.container-fluid, .page-container {
-    position: relative;
+th {
+	text-align: center;
 }
 
+/* ================== */
 .slideshow-title{
     display: flex;
     background:lightgray;
@@ -15,16 +17,15 @@
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
     border:1px solid black;
+}
 
-
+.container-fluid, .page-container {
+    position: relative;
 }
 
 .container-fluid {
-    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .page-content {
@@ -55,8 +56,14 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
-  }
+}
 
 #returnTop:hover {
     background-color: #555;
-  }
+}
+
+@media (pointer: coarse) {
+	input, select {
+		height: 2.5em;
+	}
+}
