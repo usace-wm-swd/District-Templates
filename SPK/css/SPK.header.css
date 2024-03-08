@@ -641,7 +641,7 @@ svg {
 	padding: 0;
 }
 
-input:focus {
+#main-search input:focus {
     box-shadow: 0 0 0 0 #d3d3d3!important;
     font-weight: 700;
     outline: 1px solid #d3d3d3!important;
@@ -685,7 +685,8 @@ input:focus {
 		right: -220px;
 		top: 68px;
 		transition: right .2s ease-in-out;
-		width: 206px;		
+		width: 206px;
+		display: none;
 	}
 
 	#main-search.search-open {
@@ -693,6 +694,7 @@ input:focus {
 		right: 16px;
 		top: 36px;
 		z-index: 50;
+		display: revert;
 	}
 
 	#search-form-trigger.search-open span::before {
