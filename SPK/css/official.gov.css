@@ -20,6 +20,7 @@
   -ms-transform: translateY(-100%);
   -o-transform: translateY(-100%);
   position: fixed;
+  visibility: collapse;
 }
 
 .icon_lock {
