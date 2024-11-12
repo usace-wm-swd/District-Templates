@@ -1,7 +1,7 @@
 # NOTICE:
-This repo is depreciated. That water management community has started working towards migrating to React using the following libraries:
-Theme/branding/etc -> [Groundwork](https://usace.github.io/groundwork/)
-Water Management Data Comopnents -> [Groundwork-Water](https://usace-watermanagement.github.io/groundwork-water)
+This repo is depreciated. That water management community has started working towards migrating to React using the following libraries:  
+Theme/branding/etc -> [Groundwork](https://usace.github.io/groundwork/)  
+Water Management Data Comopnents -> [Groundwork-Water](https://usace-watermanagement.github.io/groundwork-water)  
 
 
 
